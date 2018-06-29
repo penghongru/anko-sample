@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Compile_Sdk_Version
+    defaultConfig {
+        applicationId "com.hongru.anko_demo"
+        minSdkVersion Min_Sdk_Version
+        targetSdkVersion Target_Sdk_Version
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation libs.support_v7
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation libs.junit
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation libs.anko_commons
+    implementation libs.anko_layout
+    implementation libs.anko_layout_support
+    implementation libs.anko_coroutine_layout
+    implementation libs.anko_coroutine_layout_support
+    implementation libs.anko_sqlite
+    implementation libs.anko_cardview
+    implementation libs.anko_design
+    implementation libs.anko_coroutine_design
+    implementation libs.anko_gridlayout
+    implementation libs.anko_percent
+    implementation libs.anko_recyclerview
+    implementation libs.anko_coroutine_recyclerview
+    implementation libs.anko_support_v4
+    implementation libs.anko_layout_support_v4
+    implementation libs.anko_constraintlayout
+    implementation libs.recyclerview
+    implementation libs.design
+    implementation libs.andpermission
+}
+kotlin {
+    experimental {
+        coroutines "enable"
+    }
+}

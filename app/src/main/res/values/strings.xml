@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Anko-Demo</string>
+    <string name="toast_test">这是xml中的文本</string>
+</resources>
